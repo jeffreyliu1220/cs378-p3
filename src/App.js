@@ -138,6 +138,7 @@ export function SearchBar({onSearchClick}){
     console.log(currText);
   };
 
+
   useEffect(() => {
     console.log("Search message inside useEffect: ", inputText);
   }, [inputText]);
@@ -146,8 +147,8 @@ export function SearchBar({onSearchClick}){
 
   return(
     <div>
-      <input type="text" placeholder="City" onChange={inputHandler} />
-      <button onClick={() => onSearchClick(inputText)}>Search</button>
+      <input type="text" placeholder="City" onChange={inputHandler} value={inputText}/>
+      <button onClick={() => {onSearchClick(inputText); setInputText("");}}>Search</button>
     </div>
   );
 }
